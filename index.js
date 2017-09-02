@@ -244,10 +244,10 @@ Wrapper.prototype.remove = function(callback) {
 
   if (!self.id)
     return callback(new Error({ message: "Resource ID Not Defined" }))
-  if (!self.url && !self.url.update)
+  if (!self.url && !self.url.delete)
     return callback(new Error({ message: "Resource Endpoint Not Defined" }));
 
-  self.setUrl(self.url.update + self.id + '/');
+  self.setUrl(self.url.delete + self.id + '/');
   self.setMethod('DELETE');
   self.send(callback);
 }
@@ -319,9 +319,9 @@ Wrapper.prototype.updateWorker = function(callback) {
 
 Wrapper.prototype.removeWorker = function(callback) {
   var self = this;
-  if (!self.url.worker.update)
+  if (!self.url.worker.delete)
     return callback(new Error({ message: "Browser Endpoint Not Found" }));
-  self.url.update = self.url.worker.update
+  self.url.delete = self.url.worker.delete
   self.remove(callback);
 }
 

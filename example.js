@@ -56,7 +56,7 @@ function getWorkerById() {
 }
 
 function remove() {
-  var model = new Wrapper(79734610);
+  var model = new Wrapper(79735108);
   model.removeWorker(function(err, res) {
     console.log("[Err ]in here!! ", JSON.stringify(err))
     console.log("[Res ]in here!! ", res)
@@ -73,8 +73,8 @@ function click() {
 }
 
 // head()
-listBrowsers();
-listWorkers();
+// listBrowsers();
+// listWorkers();
 // getWorkerById();
 // create();
 // remove();
